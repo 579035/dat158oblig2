@@ -4,7 +4,7 @@ A website where you describe a gilled mushroom and a machine learning model esti
 
 **Live site:** https://dat158oblig2.onrender.com/
 
-**Authors:** Oddne Bjørnør Horg
+**Author:** Oddne Bjørnør Horg
 
 > **Never eat a wild mushroom based on this project.** It is a course project trained on 23 North American species.
 
