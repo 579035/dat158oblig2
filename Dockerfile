@@ -9,8 +9,8 @@ COPY scripts scripts
 COPY app app
 COPY data data
 
-# Train during the build, so the repository holds no binary model.
-RUN python -m scripts.train
+# Use the committed model. Training is too slow for free build machines.
+COPY artifacts artifacts
 
 # Render and similar hosts supply $PORT; 7860 is the local default.
 ENV PORT=7860

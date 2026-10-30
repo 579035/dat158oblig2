@@ -63,7 +63,7 @@ scripts/analysis.py Feature importance, error analysis, baselines and latency
 report/            Project report, plus the script that builds it
 app/               FastAPI backend and static website
 tests/             Automated tests
-artifacts/         metrics.json, plus model.joblib once trained
+artifacts/         Trained model and evaluation results
 ```
 
 ## Run it locally
@@ -92,11 +92,11 @@ pytest
 uvicorn app.main:app --port 7860
 ```
 
-Open <http://localhost:7860>. Training takes a few minutes and uses fixed seeds, so it reproduces the figures above. It writes `artifacts/model.joblib` (not committed) and `artifacts/metrics.json`.
+Open <http://localhost:7860>. Training takes a few minutes and uses fixed seeds, so it reproduces the figures above. It overwrites `artifacts/model.joblib` and `artifacts/metrics.json`. The trained model is committed, so you can skip this step to run the site or the tests.
 
 ## Deploy
 
-The `Dockerfile` trains the model during the build, so any host that builds Docker images can run the site. The live site runs on Render:
+The `Dockerfile` serves the committed model, so any host that builds Docker images can run the site. Training is left out of the build because it didn't finish on Render's free build machines. To change the model, run `python -m scripts.train` locally and commit the result. The live site runs on Render:
 
 1. Create an account at render.com and connect it to GitHub.
 2. Choose **New > Web Service** and select this repository.
