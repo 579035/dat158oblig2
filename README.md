@@ -1,16 +1,10 @@
----
-title: Mushroom Check
-sdk: docker
-app_port: 7860
----
-
 # Mushroom Check
 
 A website where you describe a gilled mushroom and a machine learning model estimates whether it is poisonous. When the mushroom doesn't resemble anything in its training data, it answers "Can't tell" rather than guessing.
 
 **Live site:** [add URL after deploying]
 
-**Author:** Oddne Bjørnør Horg
+**Authors:** [Name], [Name], [Name]
 
 > **Never eat a wild mushroom based on this project.** It is a course project trained on 23 North American species.
 
@@ -99,3 +93,29 @@ uvicorn app.main:app --port 7860
 ```
 
 Open <http://localhost:7860>. Training takes a few minutes and uses fixed seeds, so it reproduces the figures above. It writes `artifacts/model.joblib` (not committed) and `artifacts/metrics.json`.
+
+## Deploy
+
+The `Dockerfile` trains the model during the build, so any host that builds Docker images can run the site. The live site runs on Render:
+
+1. Create an account at render.com and connect it to GitHub.
+2. Choose **New > Web Service** and select this repository.
+3. Set the language to **Docker** and the instance type to **Free**, then deploy. Render sets `PORT` itself.
+
+Pushes to `main` redeploy the site. Free services sleep after 15 minutes without traffic, so the first visit after that can take up to a minute.
+
+## API
+
+| Method | Path | Purpose |
+|---|---|---|
+| `POST` | `/api/predict` | Verdict for `{"features": {"odor": "n", ...}}`, using the codes from `/api/schema` |
+| `GET` | `/api/schema` | Features and allowed values |
+| `GET` | `/api/example/{edible,poisonous,unfamiliar}` | Sample input |
+| `GET` | `/api/metrics` | Evaluation results |
+
+## Sources
+
+- Dataset: Schlimmer, J. (1987). *Mushroom* [Dataset]. UCI Machine Learning Repository. <https://archive.ics.uci.edu/dataset/73/mushroom>
+- Records drawn from: Lincoff, G. H. (Pres.) (1981). *The Audubon Society Field Guide to North American Mushrooms*. Alfred A. Knopf.
+- Libraries: scikit-learn, pandas, NumPy, SciPy, FastAPI, Uvicorn.
+- AI tools: this project was built with Claude Code (Anthropic), which was used for code, model evaluation design and documentation.
