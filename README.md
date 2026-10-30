@@ -2,9 +2,9 @@
 
 A website where you describe a gilled mushroom and a machine learning model estimates whether it is poisonous. When the mushroom doesn't resemble anything in its training data, it answers "Can't tell" rather than guessing.
 
-**Live site:** [add URL after deploying]
+**Live site:** https://dat158oblig2.onrender.com/
 
-**Authors:** [Name], [Name], [Name]
+**Authors:** Oddne Bjørnør Horg
 
 > **Never eat a wild mushroom based on this project.** It is a course project trained on 23 North American species.
 
