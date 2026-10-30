@@ -1,0 +1,146 @@
+{
+  "test_rows_poisonous": 1928,
+  "test_rows_edible": 528,
+  "odor_rule": {
+    "all_rows_accuracy": 0.9852,
+    "dev_species_accuracy": 0.9802,
+    "test_species_accuracy": 0.9967,
+    "test_species_false_edible": 0.0041
+  },
+  "one_rule": {
+    "features_chosen": {
+      "odor": 18
+    },
+    "dev_unseen_accuracy": 0.9802,
+    "dev_unseen_poison_recall": 0.9437,
+    "test_rule": {
+      "feature": "odor",
+      "poisonous_values": [
+        "f",
+        "m",
+        "p"
+      ]
+    },
+    "test_accuracy": 0.9967,
+    "test_false_edible": 0.0041
+  },
+  "feature_importance": {
+    "odor": 0.2301,
+    "spore-print-color": 0.0976,
+    "gill-size": 0.0932,
+    "stalk-surface-above-ring": 0.0744,
+    "gill-color": 0.0742,
+    "stalk-surface-below-ring": 0.0654,
+    "ring-type": 0.0647,
+    "bruises": 0.0447,
+    "population": 0.0385,
+    "stalk-root": 0.0316,
+    "habitat": 0.0316,
+    "gill-spacing": 0.029,
+    "stalk-color-below-ring": 0.0227,
+    "stalk-color-above-ring": 0.0204,
+    "cap-color": 0.0184,
+    "stalk-shape": 0.0157,
+    "cap-surface": 0.0148,
+    "ring-number": 0.0146,
+    "cap-shape": 0.0083,
+    "gill-attachment": 0.0051,
+    "veil-color": 0.0051
+  },
+  "dev_species_errors": [
+    {
+      "rows": 256,
+      "label": "poisonous",
+      "accuracy": 0.0
+    },
+    {
+      "rows": 72,
+      "label": "poisonous",
+      "accuracy": 0.0
+    },
+    {
+      "rows": 32,
+      "label": "poisonous",
+      "accuracy": 0.0
+    },
+    {
+      "rows": 8,
+      "label": "poisonous",
+      "accuracy": 0.0
+    },
+    {
+      "rows": 288,
+      "label": "poisonous",
+      "accuracy": 0.0035
+    },
+    {
+      "rows": 96,
+      "label": "edible",
+      "accuracy": 0.0104
+    },
+    {
+      "rows": 192,
+      "label": "edible",
+      "accuracy": 0.0625
+    },
+    {
+      "rows": 48,
+      "label": "edible",
+      "accuracy": 0.2292
+    },
+    {
+      "rows": 288,
+      "label": "edible",
+      "accuracy": 0.3229
+    },
+    {
+      "rows": 48,
+      "label": "edible",
+      "accuracy": 0.5
+    },
+    {
+      "rows": 192,
+      "label": "edible",
+      "accuracy": 0.776
+    },
+    {
+      "rows": 96,
+      "label": "edible",
+      "accuracy": 0.7812
+    },
+    {
+      "rows": 1296,
+      "label": "poisonous",
+      "accuracy": 0.9676
+    },
+    {
+      "rows": 32,
+      "label": "edible",
+      "accuracy": 0.9688
+    },
+    {
+      "rows": 1728,
+      "label": "edible",
+      "accuracy": 0.978
+    },
+    {
+      "rows": 768,
+      "label": "edible",
+      "accuracy": 1.0
+    },
+    {
+      "rows": 192,
+      "label": "edible",
+      "accuracy": 1.0
+    },
+    {
+      "rows": 36,
+      "label": "poisonous",
+      "accuracy": 1.0
+    }
+  ],
+  "latency": {
+    "median_ms": 15.9,
+    "max_ms": 18.8
+  }
+}

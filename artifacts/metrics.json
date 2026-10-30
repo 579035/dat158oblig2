@@ -1,0 +1,143 @@
+{
+  "rows": 8124,
+  "species": 23,
+  "dev_species": 18,
+  "test_species": 5,
+  "model": "random forest",
+  "policy": {
+    "max_p_poison": 0.02,
+    "max_distance": 1,
+    "min_known": 10
+  },
+  "model_comparison": {
+    "baseline (majority)": {
+      "random_split_accuracy": 0.649,
+      "unseen_species_accuracy": 0.3444,
+      "unseen_species_poison_recall": 0.0,
+      "unseen_species_log_loss": 9.0576
+    },
+    "naive bayes": {
+      "random_split_accuracy": 0.9568,
+      "unseen_species_accuracy": 0.4951,
+      "unseen_species_poison_recall": 0.164,
+      "unseen_species_log_loss": 3.6755
+    },
+    "logistic regression": {
+      "random_split_accuracy": 1.0,
+      "unseen_species_accuracy": 0.3922,
+      "unseen_species_poison_recall": 0.2329,
+      "unseen_species_log_loss": 2.5649
+    },
+    "decision tree": {
+      "random_split_accuracy": 1.0,
+      "unseen_species_accuracy": 0.7766,
+      "unseen_species_poison_recall": 0.8099,
+      "unseen_species_log_loss": 3.0718
+    },
+    "random forest": {
+      "random_split_accuracy": 1.0,
+      "unseen_species_accuracy": 0.7652,
+      "unseen_species_poison_recall": 0.6494,
+      "unseen_species_log_loss": 0.6216
+    },
+    "gradient boosting": {
+      "random_split_accuracy": 1.0,
+      "unseen_species_accuracy": 0.6798,
+      "unseen_species_poison_recall": 0.5956,
+      "unseen_species_log_loss": 1.1309
+    }
+  },
+  "dev_unseen_species": {
+    "0.0": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 0.8127,
+      "edible_flagged_poisonous": 0.3738,
+      "uncertain_rate": 0.4818
+    },
+    "0.25": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.0008,
+      "poison_flagged_poisonous": 0.6839,
+      "edible_flagged_poisonous": 0.2762,
+      "uncertain_rate": 0.5891
+    },
+    "0.5": {
+      "false_edible_rate": 0.0017,
+      "edible_coverage": 0.0016,
+      "poison_flagged_poisonous": 0.4933,
+      "edible_flagged_poisonous": 0.2844,
+      "uncertain_rate": 0.6452
+    }
+  },
+  "dev_known_species": {
+    "0.0": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.9959,
+      "poison_flagged_poisonous": 1.0,
+      "edible_flagged_poisonous": 0.0,
+      "uncertain_rate": 0.0026
+    },
+    "0.25": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.7514,
+      "poison_flagged_poisonous": 0.9874,
+      "edible_flagged_poisonous": 0.0,
+      "uncertain_rate": 0.1658
+    },
+    "0.5": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.3519,
+      "poison_flagged_poisonous": 0.9548,
+      "edible_flagged_poisonous": 0.0027,
+      "uncertain_rate": 0.4347
+    }
+  },
+  "test_unseen_species": {
+    "0.0": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 1.0,
+      "edible_flagged_poisonous": 0.125,
+      "uncertain_rate": 0.1881
+    },
+    "0.25": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 0.7879,
+      "edible_flagged_poisonous": 0.1705,
+      "uncertain_rate": 0.3449
+    },
+    "0.5": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 0.5985,
+      "edible_flagged_poisonous": 0.1307,
+      "uncertain_rate": 0.502
+    }
+  },
+  "all_unseen_species": {
+    "0.0": {
+      "false_edible_rate": 0.0,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 0.8764,
+      "edible_flagged_poisonous": 0.2561,
+      "uncertain_rate": 0.4987
+    },
+    "0.25": {
+      "false_edible_rate": 0.0033,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 0.7384,
+      "edible_flagged_poisonous": 0.2316,
+      "uncertain_rate": 0.5668
+    },
+    "0.5": {
+      "false_edible_rate": 0.0033,
+      "edible_coverage": 0.0,
+      "poison_flagged_poisonous": 0.5574,
+      "edible_flagged_poisonous": 0.2648,
+      "uncertain_rate": 0.6182
+    }
+  },
+  "test_unseen_species_model_accuracy": 0.5301
+}

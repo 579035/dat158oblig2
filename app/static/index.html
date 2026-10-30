@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mushroom Check</title>
+  <meta name="description" content="A machine learning demo that estimates whether a gilled mushroom is poisonous, and says so when it can't tell.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Mushroom Check</h1>
+      <p class="lede">Describe a gilled mushroom and a machine learning model estimates whether it is poisonous. When the mushroom doesn't resemble anything it has learned, it says so instead of guessing.</p>
+      <p class="warning" role="note"><strong>Never eat a wild mushroom based on this site.</strong> It is a student project trained on 23 North American species. Only a qualified expert can confirm that a mushroom is safe.</p>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section aria-labelledby="form-title">
+      <div class="form-head">
+        <h2 id="form-title">Describe the mushroom</h2>
+        <p>Fill in what you can see and smell. Leave the rest as "Not sure".</p>
+        <div class="examples" role="group" aria-label="Load an example">
+          <span>Try an example:</span>
+          <button type="button" data-example="edible">Edible</button>
+          <button type="button" data-example="poisonous">Poisonous</button>
+          <button type="button" data-example="unfamiliar">Unfamiliar</button>
+          <button type="button" id="reset" class="quiet">Clear all</button>
+        </div>
+      </div>
+      <form id="form" autocomplete="off"></form>
+    </section>
+
+    <aside class="result" aria-live="polite" aria-labelledby="result-title">
+      <h2 id="result-title" class="sr-only">Result</h2>
+      <div id="result"></div>
+    </aside>
+  </main>
+
+  <section class="wrap about" aria-labelledby="about-title">
+    <h2 id="about-title">How far can you trust it?</h2>
+    <p>Row-by-row tests on this dataset score close to 100%, but that mostly shows the model recognising species it has already seen. The fairer test is a species it has never seen, and the plain model does much worse there. So it may only answer "edible" when the mushroom closely matches its training data, and any warning odor means "Likely poisonous".</p>
+    <div class="table-scroll"><table id="metrics"></table></div>
+    <p class="note" id="metrics-note"></p>
+    <p class="note">Odor alone turned out to beat all of these models on unseen species (98.0% accuracy). It is too risky to trust for an edible answer, so here a warning odor can only ever lead to "Likely poisonous". An edible answer still needs a close match.</p>
+    <p class="note">Data: <a href="https://archive.ics.uci.edu/dataset/73/mushroom">UCI Mushroom dataset</a>, based on The Audubon Society Field Guide to North American Mushrooms (1981).</p>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
